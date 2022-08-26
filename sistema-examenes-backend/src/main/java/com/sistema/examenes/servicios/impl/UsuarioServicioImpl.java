@@ -36,4 +36,15 @@ public class UsuarioServicioImpl implements UsuarioServicio {
 
         return usuarioLocal;
     }
+
+    @Override
+    public Usuario obtenerUsuario(String username) {
+        return usuarioRepositorio.findByUsername(username);
+    }
+
+    @Override
+    public void eliminarUsuario(Long usuarioId){
+        usuarioRepositorio.deleteById(usuarioId);
+
+    }
 }
